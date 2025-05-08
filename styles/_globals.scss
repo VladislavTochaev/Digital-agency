@@ -1,0 +1,100 @@
+@use 'helpers' as *;
+
+body {
+  @include fluid-text(18, 14);
+
+  font-family: var(--font-family-base);
+  letter-spacing: normal;
+  color: var(--color-light-gray-50);
+  background-color: var(--color-dark-alt);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: var(--color-light);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h1, .h1 {
+  line-height: 1.3;
+}
+
+.headers--gray {
+  color: var(--color-gray-40);
+}
+
+h1, .h1 {
+  @include fluid-text(58, 34);
+}
+
+h2, .h2 {
+  @include fluid-text(48, 28);
+}
+
+h3, .h3 {
+  @include fluid-text(30, 20);
+}
+
+h4, .h4 {
+  @include fluid-text(28, 20);
+}
+
+h5, .h5 {
+  @include fluid-text(24, 18);
+}
+
+h6, .h6 {
+  @include fluid-text(20, 16);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: var(--color-light);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #6e8efb;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+
+  @include hover {
+    &::before {
+      transform: scaleX(1); /* Волна "заполняет" линию */
+      transform-origin: left;
+    }
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-light);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}
