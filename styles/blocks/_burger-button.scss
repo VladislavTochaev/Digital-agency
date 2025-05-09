@@ -1,0 +1,60 @@
+@use '../helpers' as *;
+
+.burger-button {
+  @include square(rem(28));
+  
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: rem(7) rem(3.5);
+  color: var(--color-light);
+  background-color: transparent;
+  border: none;
+
+  // &::after {
+  //   @include abs-center;
+  //   @include square(rem(52));
+
+  //   content: '';
+  //   // z-index: -1; если добавить сама кнопка видна, а фон нет.
+  //   background-color: var(--color-gray-10);
+  //   border: var(--border);
+  //   border-radius: 50%;
+  // }
+  // я пытался сделать кружок вокруг кнопки как по макету но что-то не получилось:(
+
+  @include hover {
+    color: var(--color-gray-40);
+  }
+
+  &.is-active {
+    .burger-button__line {
+      &:first-child {
+        rotate: 45deg;
+        transform-origin: 0;
+        translate: 0.25em -0.1em;
+      }
+
+      &:nth-child(2) {
+        rotate: -45deg;
+      }
+
+      &:last-child {
+        width: 0;
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: rem(2);
+    background-color: currentColor;
+    border-radius: 1rem;
+    transition-duration: var(--transition-duration);
+
+    &:last-child {
+      align-self: end;
+      width: 55%;
+    }
+  }
+}

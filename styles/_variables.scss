@@ -4,6 +4,7 @@
   --color-light: #FFFFFF;
   --color-dark: #000000;
 
+  --color-accent: #6e8efb;
   --color-dark-alt: #0F0F0F;
   
   --color-light-gray-50: #808080;
@@ -15,6 +16,8 @@
   --color-gray-12: #1F1F1F;
   --color-gray-30: #4C4C4C;
   --color-gray-40: #666666;
+
+  --gradient: linear-gradient(90deg, #808080, #C0C0C0, #E0E0E0);
 
   --border: rem(1) solid var(--color-gray-12);
 
