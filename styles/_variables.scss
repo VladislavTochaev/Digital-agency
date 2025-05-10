@@ -17,6 +17,8 @@
   --color-gray-30: #4C4C4C;
   --color-gray-40: #666666;
 
+  --gradient: linear-gradient(180deg, var(--color-gray-10) 0%, rgba(26, 26, 26, 0) 100%);
+
   --border: rem(1) solid var(--color-gray-12);
 
   --font-family-base: 'Sora', sans-serif;
