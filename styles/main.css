@@ -247,7 +247,6 @@ svg * {
   --color-gray-12: #1F1F1F;
   --color-gray-30: #4C4C4C;
   --color-gray-40: #666666;
-  --gradient: linear-gradient(90deg, #808080, #C0C0C0, #E0E0E0);
   --border: rem(1) solid var(--color-gray-12);
   --font-family-base: "Sora", sans-serif;
   --container-width: 100rem;
@@ -367,18 +366,12 @@ a {
 }
 @media (any-hover: hover) {
   a:hover {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-light-gray-50);
   }
 }
 @media (any-hover: none) {
   a:active {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-light-gray-50);
   }
 }
 a[class] {
@@ -413,15 +406,16 @@ button[aria-label]::before {
 }
 
 .burger-button {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 3.25rem;
+  height: 3.25rem;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.4375rem 0.21875rem;
+  padding: 1.1875rem 1rem;
   color: var(--color-light);
-  background-color: transparent;
-  border: none;
+  background-color: var(--color-gray-10);
+  border: var(--border);
+  border-radius: 50%;
 }
 @media (any-hover: hover) {
   .burger-button:hover {

@@ -78,10 +78,7 @@ a {
   color: var(--color-light);
 
   @include hover {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--color-light-gray-50);
   }
 
   &[class] {
